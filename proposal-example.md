@@ -20,24 +20,23 @@ Object.typeOf = (a) => {
     return type;
 };
 
-const inputs = [
-    () => {}, // => 'Function' 
-    {}, // => 'Object'
-    [], // => 'Array'
-    false, // => 'Boolean'
-    NaN, // => 'NaN'
-    new Date(), // => 'Date'
-    '', // => 'String'
-    0, // => 'Number'
-    3.14, // => 'Float'
-    null, // => 'Null'
-    undefined, // => 'Undefined'
-    Infinity, // => 'Infinity'
-    new WeakMap([]), // => 'WeakMap'
-    new Boolean(true), // => 'Boolean'
-    new Number(1), // => 'Number'
-    /regexp/, // => 'RegExp'
-    class MyClass {}, // => 'Function'
-];
+Object.typeOf(() => {}); // => 'Function' 
+Object.typeOf({}); // => 'Object'
+Object.typeOf([]); // => 'Array'
+Object.typeOf(false); // => 'Boolean'
+Object.typeOf(NaN); // => 'NaN'
+Object.typeOf(new Date()); // => 'Date'
+Object.typeOf(''); // => 'String'
+Object.typeOf(0); // => 'Number'
+Object.typeOf(3.14); // => 'Float'
+Object.typeOf(null); // => 'Null'
+Object.typeOf(undefined); // => 'Undefined'
+Object.typeOf(Infinity); // => 'Infinity'
+Object.typeOf(new WeakMap([])); // => 'WeakMap'
+Object.typeOf(new Boolean(true)); // => 'Boolean'
+Object.typeOf(new Number(1)); // => 'Number'
+Object.typeOf(/regexp/); // => 'RegExp'
+Object.typeOf(class MyClass {}); // => 'Function'
+
 
 ```
