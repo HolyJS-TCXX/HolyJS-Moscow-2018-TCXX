@@ -44,7 +44,7 @@ const theBiggestDecinimalThirdWayFromString = BigDecinimal('9007199254740991');
 
 ### Operators
 
-You can use `+`, `*`, `-`, `**` and `%` with `BigInt`s, just like with `Number`s.
+You can use `+`, `*`, `-`, `**` and `%` with `BigDecinimal`s, just like with `Number`s.
 
 ```
 const result = 900719925474099100000000000000d + 110000000000000000d;
