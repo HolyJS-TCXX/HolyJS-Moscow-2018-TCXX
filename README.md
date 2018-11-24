@@ -1,17 +1,48 @@
-# HolyJS Moscow 2018 TCXX
-
-It's repository for your TCXX proposals. 
+# ECMAScript proposal: Class Spread Operator
+- [Motivation](#motivation)
+- [High-level API](#high-level-api)
+- [FAQ](#faq)
 
 ## Motivation
 
-HolyJS is one of the biggest conferences about JavaScript in ex-USSR space. Our audience works with JS a lot and can advise some interesting new features which have to be in JavaScript standard. We in HolyJS want to help with it.
+In JavaScript we could extend class only by another one, but sometimes we need to merge functionality from multiple classes with any colission rule.
+```js
+class A {}
 
-During HolyJS conference we are open for your proposals. On the closing of the conference programs committee of HolyJS would choose the best proposal and help to provide it to TC39 committee. 
+class B extends A {}
+```
+With `Class Spread Operator` we could extend class from multiple classes and objects.
+```js
+import lodash from 'lodash'
 
-## Proposal making guide
+class LabmdaLodash {
+ // Some functions
+}
 
- 1. Think what your really need in JavaScript
- 1. Fill your proposal file based on [proposal template](https://github.com/HolyJS-TCXX/HolyJS-Moscow-2018-TCXX/blob/master/proposal-template.md) (you can see [example](https://github.com/HolyJS-TCXX/HolyJS-Moscow-2018-TCXX/blob/master/proposal-example.md)) 
- 1. Make pull request with your proposal into this repository 
- 
+export default class BetterLodash {
+  ...lodash;
+  ...LabmdaLodash;
+}
 
+```
+
+## High-level API
+
+Merge classes
+```js
+class A {}
+class B {}
+class C {
+  ...A;
+  ...B;
+}
+```
+
+Merge objects
+```js
+const apiService = new API();
+
+class ComponentWithApiMethods {
+  ...apiService
+}
+```
