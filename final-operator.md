@@ -28,6 +28,16 @@ class B extends A {
 }
 ```
 
+Disallow to add methods to prototype?
+
+```
+final class A {
+}
+
+// JS engine will say: Sorry Bro :(
+A.prototype.unknownShitThatComesFromCode = () => null;;
+```
+
 For methods:
 
 ```js
