@@ -12,18 +12,22 @@ class A {}
 class B extends A {}
 ```
 With `Class Spread Operator` we could extend class from multiple classes and objects.
+So it solve problem when you have a same part of few classes, but you don't make relations between them.
 ```js
-import lodash from 'lodash'
-
-class LabmdaLodash {
- // Some functions
+const methodsMixin = {
+  firstFn() {},
+  secondFn() {}
 }
 
-export default class BetterLodash {
-  ...lodash;
-  ...LabmdaLodash;
+class A {
+  ...methodsMixin;
+  thirdFn() {}
 }
 
+class B {
+  ...methodsMixin;
+  forthFn() {}
+}
 ```
 
 ## High-level API
