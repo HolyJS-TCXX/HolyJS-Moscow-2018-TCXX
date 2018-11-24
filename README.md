@@ -48,7 +48,7 @@ class C {
 // C { a = 3; b() {} }
 ```
 
-Merge objects
+Merge with object
 ```js
 const apiService = {
   fetchUser() {},
