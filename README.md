@@ -34,19 +34,31 @@ class B {
 
 Merge classes
 ```js
-class A {}
-class B {}
+class A {
+  a = 2;
+}
+class B {
+  a = 3;
+  b() {}
+}
 class C {
   ...A;
   ...B;
 }
+// C { a = 3; b() {} }
 ```
 
 Merge objects
 ```js
-const apiService = new API();
+const apiService = {
+  fetchUser() {},
+  fetchMessages() {},
+};
 
 class ComponentWithApiMethods {
-  ...apiService
+  ...apiService;
+  async componentDidMount() {
+    this.users = await this.fetchUser();
+  }
 }
 ```
