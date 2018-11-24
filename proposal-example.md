@@ -1,25 +1,48 @@
-# ECMAScript proposal: Add 🐈(cat) prefix to functions
+# ECMAScript proposal: Class Spread Operator
 - [Motivation](#motivation)
 - [High-level API](#high-level-api)
 - [FAQ](#faq)
 
 ## Motivation
 
-Functions or methods, marked with 🐈 do not throw exceptions. In in case of error - 🐈 will be throw.
+In JavaScript we could extend class only by another one, but sometimes we need to merge functionality from multiple classes with any colission rule.
 ```js
-function 🐈myFunction() {
-}
+class A {}
+
+class B extends A {}
 ```
+With `Class Spread Operator` we could extend class from multiple classes and objects.
+```js
+import lodash from 'lodash'
+
+class LabmdaLodash {
+ // Some functions
+}
+
+export default class BetterLodash {
+  ...lodash;
+  ...LabmdaLodash;
+}
+
+```
+
 ## High-level API
 
+Merge classes
 ```js
-function 🐈myFunction() {
-  throw new Error('bad request');
+class A {}
+class B {}
+class C {
+  ...A;
+  ...B;
 }
-try {
-  myFunction();
-} catch (err) {
-  console.error(err); // 🐈
-}
+```
 
+Merge objects
+```js
+const apiService = new API();
+
+class ComponentWithApiMethods {
+  ...apiService
+}
 ```
